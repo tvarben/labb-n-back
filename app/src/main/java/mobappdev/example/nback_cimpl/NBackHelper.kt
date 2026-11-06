@@ -25,7 +25,8 @@ class NBackHelper {
 
     companion object {
         init {
-            System.loadLibrary("JniBridge") // Load the native C library
+            System.loadLibrary("nback_cimpl") // Load dependent C library first
+            System.loadLibrary("JniBridge")  // Load JNI wrapper library
         }
     }
 }
